@@ -23,10 +23,10 @@ It is an abstract class that extends DefaultContextGenerator. It has a bunch of 
 
 There is also some nice helper functions that allow you to find Prolog "facts" from the model:
 
-protected List<Map<String, String>> findAllFacts(String atomName, String table, String... values)
-protected Map<String, String> findFirstFact(String atomName, String table, String... values)
-protected List<String> findAll(String atomName, String table, String... values)
-protected String findFirst(String atomName, String table, String... values)
+	protected List<Map<String, String>> findAllFacts(String atomName, String table, String... values)
+	protected Map<String, String> findFirstFact(String atomName, String table, String... values)
+	protected List<String> findAll(String atomName, String table, String... values)
+	protected String findFirst(String atomName, String table, String... values)
 
 Each of the find "matching" methods has the same arguments: (String atomName, String table, String... values)
 They work by supplying some atom name, or column name from a table, a table, and a list of values to match. Null represents a "_" in Prolog.
@@ -40,7 +40,7 @@ I could also call findAllFacts("name", "ports", null, null, "t1") and retrieve a
 the order they appear in the schema of the table).
 
 The code for our TT2BDD transformation is in 
-mde/tt2bdd/ModelToModelTransformer/src/TT2BDD_ContextGenerator.java
+	mde/tt2bdd/ModelToModelTransformer/src/TT2BDD_ContextGenerator.java
 
 I'm a little interested to know what you think about an approach like this to performing the model to model transformations. 
 Ideally the api would also allow for a way to actually run the Prolog constraints on the resulting model before passing it to 
