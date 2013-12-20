@@ -1,0 +1,16 @@
+##
+## Doug Ilijev (dci89) <doug.ilijev@utexas.edu>
+## CS 392F - Don Batory
+##
+#set($MARKER="//----")
+#set($Q = '"')
+##
+${MARKER}tree.dot
+digraph {
+#foreach($node in $nodeS)
+	${node.nid} [label=${node.name}]
+#end
+#foreach($edge in $edgeS)
+	${edge.pnid}->${edge.cnid} [label=${edge.value}];
+#end
+}
